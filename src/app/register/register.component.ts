@@ -17,6 +17,7 @@ import { MustMatch } from '../_helpers/must-match.validator';
       this.registerForm=this.formBuilder.group({
         firstName: ['', Validators.required],
             lastName: ['', Validators.required],
+            username: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required, Validators.minLength(6)]],
             confirmPassword: ['', Validators.required]
