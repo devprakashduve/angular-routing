@@ -42,7 +42,7 @@ import { MustMatch } from '../_helpers/must-match.validator';
 
 //https://5df7da614fdcb20014a48573.mockapi.io
 
-     //  alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
 
 // /https://www.mockapi.io/projects/5df7da614fdcb20014a48574
 
