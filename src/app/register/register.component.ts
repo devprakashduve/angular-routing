@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { HttpClient } from '@angular/common/http';
+
 import { MustMatch } from '../_helpers/must-match.validator';
 @Component({
   selector: 'app-register',
@@ -11,7 +13,7 @@ import { MustMatch } from '../_helpers/must-match.validator';
   export class RegisterComponent implements OnInit {
    registerForm: FormGroup;
     submitted = false; 
-    constructor(private formBuilder:FormBuilder){}
+    constructor(private formBuilder:FormBuilder,private http:HttpClient){}
 
     ngOnInit() {
       this.registerForm=this.formBuilder.group({
@@ -38,6 +40,25 @@ import { MustMatch } from '../_helpers/must-match.validator';
             return;
         }
 
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+//https://5df7da614fdcb20014a48573.mockapi.io
+
+     //  alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+
+
+
+        this.http.post("https://5df7da614fdcb20014a48573.mockapi.io/user",JSON.stringify(this.registerForm.value))
+    .subscribe(
+        (val) => {
+            console.log("POST call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("POST call in error", response);
+        },
+        () => {
+            console.log("The POST observable is now completed.");
+        });
+
+
     }
 }
