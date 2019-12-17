@@ -46,7 +46,8 @@ import { MustMatch } from '../_helpers/must-match.validator';
 
 // /https://www.mockapi.io/projects/5df7da614fdcb20014a48574
 
-        this.http.post("https://5df7da614fdcb20014a48573.mockapi.io/user",JSON.stringify(this.registerForm.value))
+       // this.http.post("https://5df7da614fdcb20014a48573.mockapi.io/user",JSON.stringify(this.registerForm.value))
+        this.http.post("https://5df7da614fdcb20014a48573.mockapi.io/user",this.registerForm.value)
     .subscribe(
         (val) => {
             console.log("POST call successful value returned in body", 
