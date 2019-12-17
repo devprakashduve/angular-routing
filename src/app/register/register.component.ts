@@ -13,6 +13,7 @@ import { MustMatch } from '../_helpers/must-match.validator';
   export class RegisterComponent implements OnInit {
    registerForm: FormGroup;
     submitted = false; 
+    result='';
     constructor(private formBuilder:FormBuilder,private http:HttpClient){}
 
     ngOnInit() {
@@ -42,7 +43,7 @@ import { MustMatch } from '../_helpers/must-match.validator';
 
 //https://5df7da614fdcb20014a48573.mockapi.io
 
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
 
 // /https://www.mockapi.io/projects/5df7da614fdcb20014a48574
 
@@ -58,6 +59,8 @@ import { MustMatch } from '../_helpers/must-match.validator';
         },
         () => {
             console.log("The POST observable is now completed.");
+            this.result='The POST observable is now completed.';
+            this.registerForm.reset();
         });
 
 
