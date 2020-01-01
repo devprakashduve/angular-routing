@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
   //          console.log(res);
     //    });
 
-    this.httpClient.get('https://5df7da614fdcb20014a48573.mockapi.io/user').subscribe((res : any[])=>{
+    /*this.httpClient.get('https://5df7da614fdcb20014a48573.mockapi.io/user').subscribe((res : any[])=>{
         console.log(res);
     //    this.products = res;
-        })
+        });*/
 }
